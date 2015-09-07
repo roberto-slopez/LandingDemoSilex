@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+
+    #FallbackResource /index.php
+    RewriteEngine On
+    #RewriteBase /path/to/app cuando la aplicacion esta dentro de una carpeta y no en un vhost
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
